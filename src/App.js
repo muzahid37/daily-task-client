@@ -5,6 +5,7 @@ import { Routes,Route } from "react-router-dom";
 import CompletedTask from './Components/Pages/CompletedTask';
 import ToDo from './Components/Pages/ToDo';
 import Calander from './Components/Pages/Calander';
+import Footer from './Components/Sheared/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="toDo" element={<ToDo />} />
         <Route path="calender" element={<Calander />} />
       </Routes>
+      <Footer></Footer>
     </div>
   )
 }
