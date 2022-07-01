@@ -23,7 +23,7 @@ const ToDo = () => {
 
   return (
     <>
-      <div className="text-left w-2/4 m-auto mb-12">
+      <div className="text-left w-full lg:w-2/4 m-auto mb-12">
         <div className="card my-auto ">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full mb-5">
