@@ -31,14 +31,14 @@ const Task = ({ task }) => {
   return (
     <div className=" pb-3">
       <div>
-        <h2 className="text-left text-secondary text-4xl ">{complated ? "Completed":"Uncompleted"}</h2>
+        <h2 className="text-left text-secondary text-4xl mt-10">{complated ? "Completed":"Uncompleted"}</h2>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between bg-base-500 shadow-xl p-12">
         <div>
           {" "}
-          <input onClick={()=>setCompleated(!complated)} type="checkbox" name="complated" id="complated" />{" "}
-          <h2 className="inline-block"> {todayTask}</h2>
-          <p>{todayTaskDetails}</p>
+          <input className="w-4 h-4" onClick={()=>setCompleated(!complated)} type="checkbox" name="complated" id="complated" />{" "}
+          <h2 className="inline-block text-3xl text-info"> {todayTask}</h2>
+          <p className="text-2xl m-5">{todayTaskDetails}</p>
         </div>
         <div>
           <label for="my-modal" className=" btn btn-primary text-left">
