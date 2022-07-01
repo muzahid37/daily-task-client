@@ -1,10 +1,11 @@
 import React from 'react';
+import Tasks from './Tasks';
 
 const CompletedTask = () => {
     return (
         <div>
-            <h2>kdj</h2>
-        </div>
+        <Tasks></Tasks>
+      </div>
     );
 };
 

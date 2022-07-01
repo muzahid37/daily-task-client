@@ -10,7 +10,7 @@ const Tasks = () => {
         .then(data=>setTasks(data))
     },[])
     return (
-        <div>
+        <div className='task-container w-2/4 m-auto'>
              {
             tasks.map(task=><Task
               key={task._id}
