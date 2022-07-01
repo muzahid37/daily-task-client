@@ -5,7 +5,7 @@ import Task from "./task";
 const Tasks = () => {
     const[ tasks , setTasks]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/task')
+        fetch('https://true-crown-37106.herokuapp.com/task')
         .then(res=>res.json())
         .then(data=>setTasks(data))
     },[])

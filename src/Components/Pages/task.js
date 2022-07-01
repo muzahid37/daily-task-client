@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -7,13 +8,16 @@ const Task = ({ task }) => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
+    // console.log(data)
     const taskData = data.task;
     const taskDetails = data.taskDetils;
+  
+   
     const editTasks = {
       todayTask: taskData,
       todayTaskDetails: taskDetails,
     };
-    fetch("http://localhost:5000/task", {
+    fetch("https://true-crown-37106.herokuapp.com/task/:id", {
       method: "patch",
       headers: {
         "content-type": "application/json",
@@ -23,7 +27,9 @@ const Task = ({ task }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
+          console.log(editTasks)
         } else {
+          console.log('sorry')
         }
       });
   };

@@ -10,7 +10,7 @@ const ToDo = () => {
       todayTask: taskData,
       todayTaskDetails: taskDetails,
     };
-    fetch("http://localhost:5000/task", {
+    fetch("https://true-crown-37106.herokuapp.com/task", {
       method: "POST",
       headers: {
         "content-type": "application/json",
