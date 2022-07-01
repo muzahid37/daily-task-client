@@ -1,33 +1,44 @@
-import { useForm } from "react-hook-form";
-import Tasks from "./Tasks";
 
-const ToDo = () => {
+import React from 'react';
+import { useForm } from "react-hook-form";
+
+const Task = ({task}) => {
+   const {todayTask}=task;
+   
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const taskData=(data.task)
-    const tasks={
+    const editTasks={
         todayTask:taskData,
     };
     fetch('http://localhost:5000/task',{
-            method:'POST',
+            method:'patch',
             headers:{
               'content-type':'application/json'
             },
-            body:JSON.stringify(tasks)
+            body:JSON.stringify(editTasks)
           })
           .then(res=>res.json())
           .then(data=>{
-            
-           
+            if(data.success){
+              console.log("Thanks")
+
+            }
+            else{
+             console.log('sorry! something is wrong')
+            }
             
             
            })
-};
+}
+ 
+  
+  
 
-  return (
-    <div>
-      {/* <!-- The button to open modal --> */}
-      <label for="my-modal" class=" text-primary text-left">
+    
+    return (
+        <div>
+             <h2 className='inline-block	'> {todayTask}</h2>  <label for="my-modal" class=" text-primary text-left">
         + add your task
       </label>
 
@@ -60,12 +71,11 @@ const ToDo = () => {
           </div>
         </div>
       </div>
-     
-      <div>
-        <Tasks></Tasks>
-      </div>
-    </div>
-  );
+           
+          
+        </div>
+    );
 };
 
-export default ToDo;
+
+export default Task;
